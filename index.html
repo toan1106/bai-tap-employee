@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Quản lí nhân viên</h1>
+    </div>
+    <div class="container">
+        <form action="" onsubmit="">
+            <table>
+                <tr>
+                    <td>
+                        <label>Name</label>
+                        <input type="text" name="ten" placeholder="Tên Nhân Viên" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Date of birth</label>
+                        <input type="date" name="date" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Gender</label>
+                        <input value="Nam" type="radio" name="optradio" checked><label>Nam</label>
+                        <input value="Nữ" type="radio" name="optradio" checked><label>Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Languages</label>
+                        <input value="English" type="checkbox" name="ckclanguages"><label>English</label>
+                        <input value="Vietnamese" type="checkbox" name="ckclanguages"><label>Vietnamese</label>
+                        <input value="Chinese" type="checkbox" name="ckclanguages"><label>Chinese</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Department</label>
+                        <select class="form-control" id="select-department">
+                            <option>Modeler</option>
+                            <option>Detailer</option>
+                            <option>Coordinator</option>
+                        </select>
+                        <br>
+                        <a data-toggle="modal" data-target="#myModal" href="#">Thêm chức vụ</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!--The Modal-->
+    <div id="myModal" class="modal" role="dialog">
+        <!--Modal content-->
+        <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal"></button>
+             <h4 class="modal-title">Thêm chức vụ</h4>
+           </div>
+           <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="themchucvu">
+                </div>
+           </div>
+           <div class="modal-footer">
+            <button type="button" onclick="">Thêm</button>
+           </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
