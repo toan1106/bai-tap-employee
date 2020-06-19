@@ -1,4 +1,11 @@
-.container td 
+body
 {
-  float: right;
+  margin: 0 auto;
+}
+.container
+{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

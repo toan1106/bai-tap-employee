@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lí nhân viên</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
- 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Languages</label>
+                        <label>Languages:</label>
                         <input value="English" type="checkbox" name="ckclanguages"><label>English</label>
                         <input value="Vietnamese" type="checkbox" name="ckclanguages"><label>Vietnamese</label>
                         <input value="Chinese" type="checkbox" name="ckclanguages"><label>Chinese</label>
@@ -55,14 +55,32 @@
                         <a data-toggle="modal" data-target="#myModal" href="#">Thêm chức vụ</a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <button class="col-6 btn btn-primary btn-xs" onclick="">Thêm nhân viên</button>
+                    </td>
+                </tr>
             </table>
         </form>
-        <div>
-
-        </div>
     </div>
-     <!-- Modal -->
-     <div class="modal fade" id="myModal" role="dialog">
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Ngôn Ngữ</th>
+                <th>Chức Vụ</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+
+        </tbody>
+    </table>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
