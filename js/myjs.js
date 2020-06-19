@@ -21,7 +21,7 @@ function resetError() {
 function themnhanvien() {
     resetError();
     var Isvalid = true;
-    var tennhanvien = $("#ten").val();
+    var tennhanvien = $("#tennhanvien").val();
     var ckcArray = [];
     var ngaysinh = $("#ngay sinh")
     var tableRows = $("#table tr").length;
@@ -33,27 +33,51 @@ function themnhanvien() {
     for (i = 0; i < ckcArray.length; i++) {
         language += ckcArray[i] + "<br>";
     }
-    var radiogender=$("input[name='optradio':checked]").val();
-    var chucvu = $("#danhsachchucvu option:selected").text();
-    if(IsEmty(name))
-    {
-        Isvalid=false;
-        $("nameError").css("color","red").text("please input name");
+    // var radiogender=$("input[name='optradio':checked]").val();
+    // var radiogender=function()
+    // {
+    //     var radio = document.getElementsByName("Gender");
+    //     for(var i = 0;i<radio.length;i++)
+    //     {
+    //         if(radio[i].checked==true)
+    //         {
+    //             return radio[i].value;
+    //         }
+    //     }
+    // };
+    var radiogender
+    var radio = document.getElementsByName("Gender");
+    for (var i = 0; i < radio.length; i++) {
+        if (radio[i].checked == true) {
+            radiogender = radio[i].value;
+        }
     }
-    if(Isvalid)
+    var chucvu;
+    var listchucvu=document.getElementById("danhsachchucvu");
+    for(var i =0;i<listchucvu.length;i++)
     {
-        $(document).ready(function(){
-            $('table').append('<tr id="row'+tableRows+'">'
-            +'<td>'+tennhanvien+'</td>'
-            +'<td class="">'+chucvu+'</td>'
-            +'<td class="">'+ngaysinh+'</td>'
-            +'<td class="">'+radiogender+'</td>'
-            +'<td class="">'
-            +language
-            +'</td>'
-            +'<td class="">'+
-            '<a  href="#" onclick="deleteEmployee(this)">Delete</a>'+
-            '</td></tr>');
+        if(listchucvu[i].selected)
+        {
+            chucvu=listchucvu[i].value;
+        }
+    }
+    if (IsEmty(name)) {
+        Isvalid = false;
+        $("nameError").css("color", "red").text("please input name");
+    }
+    if (Isvalid) {
+        $(document).ready(function () {
+            $('table').append('<tr id="row' + tableRows + '">'
+                + '<td>' + tennhanvien + '</td>'
+                + '<td class="">' + chucvu + '</td>'
+                + '<td class="">' + ngaysinh + '</td>'
+                + '<td class="">' + radiogender + '</td>'
+                + '<td class="">'
+                + language
+                + '</td>'
+                + '<td class="">' +
+                '<a  href="#" onclick="deleteEmployee(this)">Delete</a>' +
+                '</td></tr>');
         });
     }
 }
