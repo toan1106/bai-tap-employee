@@ -53,32 +53,33 @@ function themnhanvien() {
         }
     }
     var chucvu;
-    var listchucvu=document.getElementById("danhsachchucvu");
-    for(var i =0;i<listchucvu.length;i++)
-    {
-        if(listchucvu[i].selected)
-        {
-            chucvu=listchucvu[i].value;
+    var listchucvu = document.getElementById("danhsachchucvu");
+    for (var i = 0; i < listchucvu.length; i++) {
+        if (listchucvu[i].selected) {
+            chucvu = listchucvu[i].value;
         }
     }
-    if (IsEmty(name)) {
+    if (IsEmty(tennhanvien)) {
         Isvalid = false;
         $("nameError").css("color", "red").text("please input name");
     }
     if (Isvalid) {
-        $(document).ready(function () {
-            $('table').append('<tr id="row' + tableRows + '">'
-                + '<td>' + tennhanvien + '</td>'
-                + '<td class="">' + chucvu + '</td>'
-                + '<td class="">' + ngaysinh + '</td>'
-                + '<td class="">' + radiogender + '</td>'
-                + '<td class="">'
-                + language
-                + '</td>'
-                + '<td class="">' +
-                '<a  href="#" onclick="deleteEmployee(this)">Delete</a>' +
-                '</td></tr>');
-        });
+        // $(document).ready(function () {
+        //     $('table').append('<tr id="row' + tableRows + '">'
+        //         + '<td>' + tennhanvien + '</td>'
+        //         + '<td class="">' + chucvu + '</td>'
+        //         + '<td class="">' + ngaysinh + '</td>'
+        //         + '<td class="">' + radiogender + '</td>'
+        //         + '<td class="">'
+        //         + language
+        //         + '</td>'
+        //         + '<td class="">' +
+        //         '<a  href="#" onclick="deleteEmployee(this)">Delete</a>' +
+        //         '</td></tr>');
+        // });
+        var row = "";
+        row +="<tr><tr>"+tennhanvien+"<tr><tr>"+ngaysinh+"<tr><tr>"+radiogender+"<tr><tr>"+chucvu+"</td><td><a href='#' onclick='deleteEmployee(this)'>Delete</a></td></tr>";
+        $(row).appendTo(".list");
     }
 }
 function deleteEmployee(r) {
