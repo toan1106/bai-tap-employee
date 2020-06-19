@@ -19,13 +19,14 @@
                 <tr>
                     <td>
                         <label>Name</label>
-                        <input type="text" name="ten" placeholder="Tên Nhân Viên" required>
+                        <input type="text" name="ten" placeholder="Tên Nhân Viên" id="tennhanvien" required>
+                        <p id="nameError"></p>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Date of birth</label>
-                        <input type="date" name="date" required>
+                        <input type="date" name="date" id="ngay sinh" required>
                     </td>
                 </tr>
                 <tr>
@@ -38,15 +39,15 @@
                 <tr>
                     <td>
                         <label>Languages:</label>
-                        <input value="English" type="checkbox" name="ckclanguages"><label>English</label>
-                        <input value="Vietnamese" type="checkbox" name="ckclanguages"><label>Vietnamese</label>
-                        <input value="Chinese" type="checkbox" name="ckclanguages"><label>Chinese</label>
+                        <input value="English" type="checkbox" name="ckclanguages" class="ckc"><label>English</label>
+                        <input value="Vietnamese" type="checkbox" name="ckclanguages" class="ckc"><label>Vietnamese</label>
+                        <input value="Chinese" type="checkbox" name="ckclanguages" class="ckc"><label>Chinese</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Department</label>
-                        <select class="form-control" id="select-department">
+                        <select class="form-control" id="danhsachchucvu">
                             <option>Modeler</option>
                             <option>Detailer</option>
                             <option>Coordinator</option>
@@ -57,11 +58,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="col-6 btn btn-primary btn-xs" onclick="">Thêm nhân viên</button>
+                        <button class="col-6 btn btn-primary btn-xs" onclick="themnhanvien()">Thêm nhân viên</button>
                     </td>
                 </tr>
             </table>
         </form>
+    </div>
+    <div style="background-color: saddlebrown">
+        <br>
     </div>
     </div>
     <table class="table">
@@ -94,19 +98,20 @@
                     <form>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Chức vụ:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="themchucvu">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="themchucvu()">Save</button>
                 </div>
             </div>
 
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/myjs.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
 </body>
