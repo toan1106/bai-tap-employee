@@ -14,7 +14,7 @@
         <h1>Quản lí nhân viên</h1>
     </div>
     <div class="container">
-        <form action="" onsubmit="" class="quanli">
+        <form class="quanli" onsubmit="return false">
             <table>
                 <tr>
                     <td>
@@ -26,7 +26,7 @@
                 <tr>
                     <td>
                         <label>Date of birth</label>
-                        <input type="date" name="date" id="ngay sinh" required>
+                        <input type="date" name="date" id="ngaysinh" required>
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +40,8 @@
                     <td>
                         <label>Languages:</label>
                         <input value="English" type="checkbox" name="ckclanguages" class="ckc"><label>English</label>
-                        <input value="Vietnamese" type="checkbox" name="ckclanguages" class="ckc"><label>Vietnamese</label>
+                        <input value="Vietnamese" type="checkbox" name="ckclanguages"
+                            class="ckc"><label>Vietnamese</label>
                         <input value="Chinese" type="checkbox" name="ckclanguages" class="ckc"><label>Chinese</label>
                     </td>
                 </tr>
@@ -68,7 +69,7 @@
         <br>
     </div>
     </div>
-    <table class="table">
+    <table class="table" id="tabledata">
         <thead class="thead-light">
             <tr>
                 <th>Họ tên</th>
@@ -76,10 +77,15 @@
                 <th>Giới tính</th>
                 <th>Ngôn Ngữ</th>
                 <th>Chức Vụ</th>
+                <th>Chức năng</th>
             </tr>
         </thead>
         <tbody class="list">
-
+            <td>do can toan</td>
+            <td>11-06-1994</td>
+            <td>nam</td>
+            <td>Vietnamese</td>
+            <td>Modeler</td>
         </tbody>
     </table>
     </div>
@@ -114,6 +120,13 @@
     <script src="js/myjs.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script>
+        function themdata() {
+            var row = "";
+            row += "<tr><td>" + "vu vb" + "</td><td>" + Date.now.toString() + "</td><td>" + "Nam" + "</td><td>" + "vietnames" + "</td><td>" + "quanli" + "</td><td><a href='#' onclick='xoa(this)'>Delete</a></td></tr>";
+            $(row).appendTo(".list");
+        }
+    </script>
 </body>
 
 </html>

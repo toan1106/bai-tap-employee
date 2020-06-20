@@ -23,8 +23,8 @@ function themnhanvien() {
     var Isvalid = true;
     var tennhanvien = $("#tennhanvien").val();
     var ckcArray = [];
-    var ngaysinh = $("#ngay sinh")
-    var tableRows = $("#table tr").length;
+    var ngaysinh = $("#ngaysinh").val();
+    var tableRows = $("tabledata tr").length;
     $(".ckc:checked").each(function () {
         ckcArray.push($(this).val());
     })
@@ -63,24 +63,27 @@ function themnhanvien() {
         Isvalid = false;
         $("nameError").css("color", "red").text("please input name");
     }
-    if (Isvalid) {
-        // $(document).ready(function () {
-        //     $('table').append('<tr id="row' + tableRows + '">'
-        //         + '<td>' + tennhanvien + '</td>'
-        //         + '<td class="">' + chucvu + '</td>'
-        //         + '<td class="">' + ngaysinh + '</td>'
-        //         + '<td class="">' + radiogender + '</td>'
-        //         + '<td class="">'
-        //         + language
-        //         + '</td>'
-        //         + '<td class="">' +
-        //         '<a  href="#" onclick="deleteEmployee(this)">Delete</a>' +
-        //         '</td></tr>');
-        // });
-        var row = "";
-        row +="<tr><tr>"+tennhanvien+"<tr><tr>"+ngaysinh+"<tr><tr>"+radiogender+"<tr><tr>"+chucvu+"</td><td><a href='#' onclick='deleteEmployee(this)'>Delete</a></td></tr>";
-        $(row).appendTo(".list");
-    }
+    var row = "";
+    row += "<tr><td>" + tennhanvien + "</td><td>" + ngaysinh + "</td><td>" + radiogender + "</td><td>" + language + "</td><td>" + chucvu + "</td><td><a href='#' onclick='xoa(this)'>Delete</a></td></tr>";
+    $(row).appendTo(".list");
+    // if (Isvalid) {
+    //     // $(document).ready(function () {
+    //     //     $('#tabledata').append('<tr id="row' + tableRows + '">'
+    //     //         + '<td>' + tennhanvien + '</td>'
+    //     //         + '<td class="">' + chucvu + '</td>'
+    //     //         + '<td class="">' + ngaysinh + '</td>'
+    //     //         + '<td class="">' + radiogender + '</td>'
+    //     //         + '<td class="">'
+    //     //         + language
+    //     //         + '</td>'
+    //     //         + '<td class="">' +
+    //     //         '<a  href="#" onclick="deleteEmployee(this)">Delete</a>' +
+    //     //         '</td></tr>');
+    //     // });   
+    //     var row = "";
+    //     row += "<tr><td>" + tennhanvien + "</td><td>" + ngaysinh + "</td><td>" + radiogender + "</td><td>" + language + "</td><td>" + chucvu + "</td><td><a href='#' onclick='xoa(this)'>Delete</a></td></tr>";
+    //     $(row).appendTo(".list");
+    // }
 }
 function deleteEmployee(r) {
     var i = r.parentNode.parentNode.rowIndex;
